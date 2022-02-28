@@ -3,12 +3,18 @@
     <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
   </button>
   <br>
-  <button routerLink="/dashboard/wishlist" mat-fab color="primary" aria-label="Example icon button with a home icon">
-    <mat-icon [matBadge]="cantidad" aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+  <button *ngIf="cantidad > 0" [matBadge]="cantidad" matBadgeColor="warn" color ="red"routerLink="/dashboard/wishlist" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon  aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+  </button>
+  <button *ngIf="cantidad <= 0" [matBadge]="cantidad" matBadgeColor="primary" color ="red"routerLink="/dashboard/wishlist" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon  aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
   </button>
   <br>
-  <button routerLink="/dashboard/shoppingcart" mat-fab color="primary" aria-label="Example icon button with a home icon">
-    <mat-icon [matBadge]="cantidadCart" aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+  <button *ngIf="cantidadCart > 0" [matBadge]="cantidadCart" matBadgeColor="warn" routerLink="/dashboard/shoppingcart" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon  aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+  </button>
+  <button *ngIf="cantidadCart <= 0" [matBadge]="cantidadCart" matBadgeColor="primary" routerLink="/dashboard/shoppingcart" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon  aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
   </button>
   <br>
   <button routerLink="/dashboard/profile" mat-fab color="primary" aria-label="Example icon button with a home icon">
