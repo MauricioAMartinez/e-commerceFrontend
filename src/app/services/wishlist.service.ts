@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WishlistService {
-  user_id = '1'
+  user_id = ''
   constructor(private http:HttpClient,
     private cookieService:CookieService) {
       this.user_id =   this.cookieService.get('id')

@@ -69,11 +69,13 @@ export class ProfileComponent implements OnInit {
         this.login = false;
         this.snackbar = true;
         setTimeout(() => {
+          window.location.reload();
           this.snackbar = false;
           this.user = true;
+          
 
 
-        }, 6000);
+        }, 2000);
       } else {
         this.error();
       }
@@ -98,6 +100,8 @@ export class ProfileComponent implements OnInit {
       this.login = false;
       this.user_id = this.cookieService.get('id')
       this.user_name = this.cookieService.get('username')
+      
+
 
     }
   }
