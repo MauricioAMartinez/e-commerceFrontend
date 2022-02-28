@@ -15,3 +15,15 @@ img{
 .example-card button{
   margin: 5px;
 }
+.pay{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+ 
+  
+}
+.pay button{
+  color: forestgreen;
+  height: 70px;
+  width: 70px;
+}

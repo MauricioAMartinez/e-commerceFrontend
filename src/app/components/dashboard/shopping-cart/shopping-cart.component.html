@@ -20,15 +20,23 @@
         (click)="deleteProductCart(product.id,product.name)"
         color="warn"
         mat-mini-fab  aria-label="Example icon button with a home icon">
-          <mat-icon  aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+          <mat-icon  aria-hidden="false" aria-label="Example home icon">remove_shopping_cart</mat-icon>
         </button>
       
         
       </mat-card-actions>
     </mat-card>
   </div>
-
+<br>
+  <div *ngIf="products.length > 0" class="container">
+    <h1>Total = {{total | currency:'COP'}}  </h1>
+  </div>
+  <div class="pay" *ngIf="products.length > 0">
+    <button [matTooltip]="'Pay everything '+total " mat-fab color="Orange" aria-label="Example icon button with a delete icon">
+      <mat-icon>paid</mat-icon>
+    </button>
+  </div>
   <div *ngIf="products.length < 1" class="container">
-    <h1>No Has Agregado productos a tu lista de deseos!!</h1>
+    <h1>You have not added products to your shopping cart</h1>
   </div>
   
