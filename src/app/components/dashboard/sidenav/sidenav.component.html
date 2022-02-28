@@ -1,0 +1,19 @@
+<div class="container" >
+<button routerLink="/dashboard/home" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+  </button>
+  <br>
+  <button routerLink="/dashboard/wishlist" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon [matBadge]="cantidad" aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+  </button>
+  <br>
+  <button routerLink="/dashboard/shoppingcart" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon [matBadge]="cantidadCart" aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+  </button>
+  <br>
+  <button routerLink="/dashboard/profile" mat-fab color="primary" aria-label="Example icon button with a home icon">
+    <mat-icon  aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+  </button>
+  <br>
+
+</div>
