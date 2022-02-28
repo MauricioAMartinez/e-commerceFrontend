@@ -28,7 +28,7 @@ export class ShoppingCartComponent implements OnInit {
     this._cartService.getCart(this.user_id).subscribe(data => {
 
       this.products = [...data]
-      console.log(this.products)
+  
 
     })
    

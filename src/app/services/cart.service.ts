@@ -27,6 +27,6 @@ export class CartService {
   }
 
   deleteCart(idProduct:any):Observable<any>{
-    return this.http.get<any>(this.url+'deleteproductcart/'+this.user_id+'/'+idProduct)
+    return this.http.get<any>(this.url+'deleteproductcart/'+idProduct)
   }
 }

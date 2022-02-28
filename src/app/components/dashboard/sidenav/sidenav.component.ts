@@ -14,12 +14,18 @@ export class SidenavComponent implements OnInit {
   cantidadCart: any = 0
   products: Array<any> = []
   cartProducts: Array<any> = []
+  user_id = this.cookieService.get('id')
   constructor(
     private cookieService: CookieService,
-    private _puenteService:PuenteService) { }
-  user_id = this.cookieService.get('id')
+    private _puenteService:PuenteService,
+    private _cartService:CartService,
+    private __wishlistService:WishlistService) { }
+  
   ngOnInit(): void {
   
+this.lengthCart()
+this.lengthWishlist()
+
     this._puenteService.disparadorCart.subscribe(data=>{
       this.cartProducts = [...data]
       this.cantidadCart = this.cartProducts.length
@@ -31,6 +37,19 @@ export class SidenavComponent implements OnInit {
     })
   }
 
+  lengthCart(){
+    this._cartService.getCart(this.user_id).subscribe(data=>{
+      this.cartProducts = [...data]
+      this.cantidadCart = this.cartProducts.length
+    })
+  }
+
+  lengthWishlist(){
+    this.__wishlistService.getWishlist(this.user_id).subscribe(data=>{
+      this.products = [...data]
+      this.cantidad = this.products.length
+    })
+  }
 
 
 }
